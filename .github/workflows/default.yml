@@ -22,7 +22,8 @@ jobs:
     - name: gh-pages
       run: |
         git clone ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git --branch gh-pages --single-branch gh-pages
-        cp -r docs/build/html/* gh-pages/
+        cp -r docs/build/html/* gh-pages/docs
+        cd gh-pages
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
